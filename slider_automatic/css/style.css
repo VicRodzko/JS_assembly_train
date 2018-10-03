@@ -1,0 +1,25 @@
+#slider {
+	width: 384px;
+	height: 128px;
+	border: 5px solid black;
+	margin: 50px auto;
+	overflow: hidden; /* не видно остальных картинок кроме блока slider */
+}
+img {
+	width: 128px;
+	height: 128px;
+}
+#polosa {
+	width: 768px;
+	position: relative; /* для js команды left (сдвига) */
+	left: 0; /* чтобы первый слайдер также переключался плавно а не рывком (задать начальное значение для этого необходимо) */
+	transition: all ease 1s; /* плавная анимация переключения картинок */
+}
+#polosa img {
+	float: left; /* чтобы не было отступов между картинками (маргин 4 px)*/
+}
+#polosa::after { /* скинуть (полечить) float */
+	content: "";
+	display: block;
+	clear: both;
+}
